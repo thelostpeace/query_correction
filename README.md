@@ -16,7 +16,7 @@ step 2:
 
     create ngram search dict.
 
-    ```
+```
     _你知
     你知道
     知道五
@@ -29,11 +29,11 @@ step 2:
     怎么走
     么走吗
     走吗_
-    ```
+```
 
     create masked ngram search dict.
 
-    ```
+```
     _你知[mask]     =>      _你知
     你知[mask]      =>      你知道
     知道[mask]      =>      知道五
@@ -46,7 +46,7 @@ step 2:
     怎么[mask]      =>      怎么走
     么走[mask]      =>      么走吗
     走吗[mask]      =>      走吗_
-    ```
+```
 
 step 3:
     give a query, use query ngrams in ngram search dict, if we find it then we don't correct it. Or we mask the last word and search the masked ngram search dict to find best matches based on edit distance of pinyin. This is a beam search.
